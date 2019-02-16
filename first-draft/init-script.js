@@ -57,6 +57,10 @@ if (move) {
   cameramation.setAttribute('attribute', 'position');
   cameramation.setAttribute('from', x+' '+y+' '+z);
   cameramation.setAttribute('to', '0 2 -36');
+  cameramation.setAttribute('animationbegin', 'begin');
+  document.onload = function() {
+    document.dispatchEvent(new Event('begin'));
+  }
   // cameramation.setAttribute('event-set__junctioning', 'to: -8.5 2 -34');
   // cameramation.setAttribute('easeIn', 'easeInExpo');
 
