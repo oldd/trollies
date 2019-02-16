@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <!-- <a href="./0-aframe-scene/index.html">0: aframe</a> <br>
+    <a href="./1-block-out-a/index.html">1: blockout primitives</a> <br>
+    <a href="./1-block-out-b/index.html">1: blockout assets</a> -->
+    <a-scene>
+      <!-- <a-entity position="3 2 4" link="href: ./0-block-out/index.html; title: 0 - block-out;"></a-entity>
+      <a-entity position="0 2 4" link="href: ./1-assets/index.html; title: 1 - assets;"></a-entity>
+      <a-entity position="-3 2 4" link="href: ./2-entity-component/index.html; title: 2 - entity-component;"></a-entity> -->
+      <a-link position="-5 1 -7" href="./index.html?move=1&speed=7" title="right"></a-link>
+      <a-link position="-2 4 -7" href="./index.html?move=1&speed=7&left=1" title="left"></a-link>
+      <a-link position="-2 1 -7" href="./index.html?move=1&speed=4" title="right fast"></a-link>
+      <a-link position="2 7 -7" href="./index.html?move=1&speed=4&left=1" title="left fast"></a-link>
+      <a-link position="2 4 -7" href="./index.html?move=1&speed=10" title="right slow"></a-link>
+      <a-link position="2 1 -7" href="./index.html?move=1&speed=10&left=1" title="left slow"></a-link>
+
+
+      <a-plane position="0 -2 0" rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+
+      <!-- bad ui.  the cursor disappears in the background -->
+      <a-sky color="#000000"></a-sky>
+
+      <a-entity camera look-controls position="0 3 0">
+        <a-entity cursor="fuse: true; fuseTimeout: 1000"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+      
+    </a-scene>
+  </body>
+</html>
