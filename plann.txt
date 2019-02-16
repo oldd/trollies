@@ -1,59 +1,89 @@
-neww - start with core
-  global state
-    levels: {name:level_state}
-    user_name: 'string'
-    score: num[inferred from levels?]
-    game_log: [{entries}]
-
-  level state
-    tracks: {left: num, right: num}
-    flips_log: [{time, state[or this is inferred?]}]
-    lever_state: boolean
-    time: initialize timer at top
-    moral_judgement: 'string'
-
-  game actions
-    set_name
-    get_score
-    update_score
-  level actions
-    function(points) {
-      this('cache').score += points;
-    }
-  ui components
-    lever: two states, reads from lever-state
-  game system
-    a form a top-down rendering for direction & lever 
-    event fires when critical point is reached
-      by collision? coordinates? time?
-      can be generalized over different screens
-    stages: bananas, something else, people
-      can be local html's -> window.game
-      could use janke caches for levels, push to global state in between
-  game play
-    steps
-      enter a new level
-      some instructions
-      timer starts (different timer per level)
-      make decisions
-      timer ends, final decision is read
-    can be hardcoded into each level's cache
-      <head>
-        <script>
-          var bananas = game.cache({level object});
-          bananas('cache').thing
-          game.gamelog = {important meta info}
-          game.push_level(bananas('cache'));
-      </head>
-      allows levels to pick up where they left off
+pivot
+  - purely dialectical enabler
+    like in the paper
+  no more events
+    physics just play out
+  choose config options at startup
 
 
 
-oldd - start with ui
-  motion
-    start with default accelerating motion straight towards people
-    identify coordinates of intersection
-    lever can be looked at to toggle it
-    have a listener// that waits for trolly to reach intersection coordinates
-      or done by collision with entity? triggers event to update direction
-    updates new direction based on toggled state of lever
+review
+  a belgian named bostyn
+    - of mice, men and trollies
+    https://slate.com/technology/2018/06/psychologys-trolley-problem-might-have-a-problem.html
+  on perspectival thought experiments 
+    - http://dailynous.com/2018/02/16/experiments-virtual-philosophy-guest-post-erick-ramirez/
+    sameish thoughts as fabien
+      more effective rhetoric
+      more thorough experience
+  https://www.frontiersin.org/articles/10.3389/frobt.2018.00101/full
+  chalmers: https://aeon.co/videos/new-realities-are-imminent-how-vr-reframes-big-questions-in-philosophy
+  intuition is suspect
+    ** https://scholar.uwindsor.ca/cgi/viewcontent.cgi?article=1949&context=ossaarchive
+    stengths & weaknesses 
+      - mine, not this paper's
+      good for personal development of ideas
+      and for starting discussions
+      bad for making a well-defined point
+      or getting on the page
+
+technical
+  neww - start with core
+    global state
+      levels: {name:level_state}
+      user_name: 'string'
+      score: num[inferred from levels?]
+      game_log: [{entries}]
+
+    level state
+      tracks: {left: num, right: num}
+      flips_log: [{time, state[or this is inferred?]}]
+      lever_state: boolean
+      time: initialize timer at top
+      moral_judgement: 'string'
+
+    game actions
+      set_name
+      get_score
+      update_score
+    level actions
+      function(points) {
+        this('cache').score += points;
+      }
+    ui components
+      lever: two states, reads from lever-state
+    game system
+      a form a top-down rendering for direction & lever 
+      event fires when critical point is reached
+        by collision? coordinates? time?
+        can be generalized over different screens
+      stages: bananas, something else, people
+        can be local html's -> window.game
+        could use janke caches for levels, push to global state in between
+    game play
+      steps
+        enter a new level
+        some instructions
+        timer starts (different timer per level)
+        make decisions
+        timer ends, final decision is read
+      can be hardcoded into each level's cache
+        <head>
+          <script>
+            var bananas = game.cache({level object});
+            bananas('cache').thing
+            game.gamelog = {important meta info}
+            game.push_level(bananas('cache'));
+        </head>
+        allows levels to pick up where they left off
+
+
+
+  oldd - start with ui
+    motion
+      start with default accelerating motion straight towards people
+      identify coordinates of intersection
+      lever can be looked at to toggle it
+      have a listener// that waits for trolly to reach intersection coordinates
+        or done by collision with entity? triggers event to update direction
+      updates new direction based on toggled state of lever

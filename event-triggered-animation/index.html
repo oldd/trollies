@@ -1,0 +1,30 @@
+<!-- https://codepen.io/Suiseki/pen/rywemP -->
+
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+
+<a-scene>
+  <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E">
+    <a-animation attribute="position" from="0 1.25 -5" to="0 2.75 -5" 
+                 dur="2000" fill="forwards" repeat="0"
+                 ></a-animation>
+    <a-animation attribute="material.color" from="#EF2D5E" to="green" dur="1000" delay="500" repeat="0"></a-animation>
+    <a-animation id="move2" attribute="position" from="0 2.75 -5" to="2.5 2.75 -5" delay="2000"
+                 dur="3000" fill="forwards" repeat="0"
+                 ></a-animation>
+  </a-sphere>
+  <a-box id="mybox" position="-1 0.5 -3" rotation="0 45 0" width="1" height="1" depth="1" color="#4CC3D9">
+        <a-animation id="ballanim" begin="startbox" attribute="position" from="-1 0.5 -3" to="-1 1.25 -3" delay="10"
+                 dur="1500" fill="forwards" repeat="0"
+                 ></a-animation>
+  </a-box>
+  <a-text value="Hi there" position="-2 2.5 -3" color="red"></a-text>
+  <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D">
+        <a-animation id="ballanim" begin="startcyl" attribute="position" from="1 0.75 -3" to="1 2.75 -3" delay="500"
+                 dur="1500" fill="forwards" repeat="0"
+                 ></a-animation>
+  </a-cylinder>
+  <a-plane position="0 0 -4" rotation="-90 0 0" width="5" height="4" color="#7BC8A4"></a-plane>
+  <a-sky color="#eaeaea"></a-sky>
+</a-scene>
+
+<script src="./script.js"></script>
